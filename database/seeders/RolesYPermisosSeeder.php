@@ -29,11 +29,18 @@ class RolesYPermisosSeeder extends Seeder
 
         $admin = Role::firstOrCreate(['name' => 'administrador', 'guard_name' => 'web']);
         $profesor = Role::firstOrCreate(['name' => 'profesor', 'guard_name' => 'web']);
+        $coordinador = Role::firstOrCreate(['name' => 'coordinador', 'guard_name' => 'web']);
         $estudiante = Role::firstOrCreate(['name' => 'estudiante', 'guard_name' => 'web']);
 
         $admin->syncPermissions($permisos);
 
         $profesor->syncPermissions([
+            'estudiantes.ver',
+            'estudiantes.editar',
+        ]);
+
+        // Actividad 3: coordinador consulta y modifica (sujeto a ABAC en la Policy).
+        $coordinador->syncPermissions([
             'estudiantes.ver',
             'estudiantes.editar',
         ]);
