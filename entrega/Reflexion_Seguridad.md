@@ -24,8 +24,14 @@ _Pendiente: Franklin_
 ---
 
 <!-- INICIO EMESIS (preguntas 7 y 8) -->
-_Pendiente: Emesis_
-<!-- FIN EMESIS -->
+7. ¿Por qué la autorización debe realizarse en el backend?
+
+Porque las restricciones del frontend pueden ser manipuladas o evitadas por el usuario. Por ejemplo, ocultar un botón no impide realizar una petición directamente a la API mediante Postman o Bruno. Por eso, el backend debe verificar los roles, permisos y atributos del usuario antes de autorizar cualquier operación.
+
+8. ¿Qué diferencia existe entre HTTP 401 y HTTP 403?
+
+El código HTTP 401 indica que el usuario no está autenticado o que su token es inválido. En cambio, el código HTTP 403 indica que el usuario está autenticado, pero no tiene los permisos necesarios para realizar la operación solicitada.
+<!-- FIN Emesis -->
 
 ---
 
