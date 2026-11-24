@@ -51,12 +51,14 @@ class EstudiantePolicy
             return $user->can('estudiantes.editar');
         }
 
-        // ABAC: profesor y coordinador (Actividad 3) necesitan el permiso RBAC
-        // y pertenecer a la misma carrera.
+        // ABAC (Actividad 4): permiso RBAC + misma carrera + misma sede.
+        // Aplica a profesor y coordinador (Actividad 3).
         if ($user->hasAnyRole(['profesor', 'coordinador'])) {
             return $user->can('estudiantes.editar')
                 && $user->carrera_id !== null
-                && $user->carrera_id === $estudiante->carrera_id;
+                && $user->carrera_id === $estudiante->carrera_id
+                && $user->sede_id !== null
+                && $user->sede_id === $estudiante->sede_id;
         }
 
         return false;

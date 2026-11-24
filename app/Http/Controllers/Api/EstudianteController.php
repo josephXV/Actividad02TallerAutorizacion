@@ -32,6 +32,7 @@ class EstudianteController extends Controller
         $data = $request->validate([
             'user_id' => ['required', 'exists:users,id', 'unique:estudiantes,user_id'],
             'carrera_id' => ['required', 'exists:carreras,id'],
+            'sede_id' => ['sometimes', 'nullable', 'exists:sedes,id'],
             'cedula' => ['required', 'string', 'max:30', 'unique:estudiantes,cedula'],
             'nombre' => ['required', 'string', 'max:120'],
             'apellido' => ['required', 'string', 'max:120'],
@@ -50,6 +51,7 @@ class EstudianteController extends Controller
 
         $data = $request->validate([
             'carrera_id' => ['sometimes', 'exists:carreras,id'],
+            'sede_id' => ['sometimes', 'nullable', 'exists:sedes,id'],
             'cedula' => [
                 'sometimes',
                 'string',
