@@ -40,5 +40,8 @@ El código HTTP 401 indica que el usuario no está autenticado o que su token es
 ---
 
 <!-- INICIO JAIRO (discusión 19.2) -->
-_Pendiente: Jairo_
+1. **¿Qué sucedería si el profesor cambia de carrera?** Como el atributo se evalúa en cada petición, pierde de inmediato el acceso a la carrera anterior y lo gana en la nueva. Los tokens existentes siguen siendo válidos porque la decisión no está guardada en el token.
+2. **¿Qué sucede si el estudiante cambia de carrera?** El profesor de la carrera anterior deja de poder modificarlo y el de la nueva carrera puede hacerlo (siempre que coincida la sede).
+3. **¿Por qué no basta con verificar el rol `profesor`?** Autorizaría a cualquier profesor sobre cualquier estudiante de la institución.
+4. **¿Qué otros atributos podrían incorporarse?** Período académico, estado de matrícula, sede, departamento, horario, nivel de la asignatura y estado de la cuenta.
 <!-- FIN JAIRO -->
