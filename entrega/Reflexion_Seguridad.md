@@ -12,7 +12,9 @@ _Pendiente: Joseph_
 ---
 
 <!-- INICIO DIANA (preguntas 3 y 4) -->
-_Pendiente: Diana_
+**3. ¿Por qué las Policies son adecuadas para operaciones CRUD?** Una Policy agrupa por modelo (`viewAny`, `view`, `create`, `update`, `delete`) las reglas que sí dependen del recurso. Se descubre automáticamente por convención, se invoca con `Gate::authorize` y centraliza la lógica, de modo que no queda dispersa en los controladores.
+
+**4. ¿Cuál es la diferencia entre RBAC y ABAC?** RBAC decide por el rol o permiso asignado (`estudiantes.editar`). ABAC decide por atributos del usuario, del recurso y del contexto (carrera, sede, propiedad, estado activo, horario). En el taller se combinan: el permiso RBAC es necesario pero no suficiente.
 <!-- FIN DIANA -->
 
 ---
