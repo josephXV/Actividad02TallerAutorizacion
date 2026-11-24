@@ -39,6 +39,7 @@ class DatosPruebaSeeder extends Seeder
         $crearUsuario('admin@academica.test', 'Administrador General', 'administrador', null);
         $crearUsuario('profesor.iti@academica.test', 'Profesor de TI', 'profesor', $sistemas);
         $crearUsuario('profesor.isw@academica.test', 'Profesor de Software', 'profesor', $software);
+        $crearUsuario('coordinador.iti@academica.test', 'Coordinador de TI', 'coordinador', $sistemas);
 
         $usuarioEstudiante1 = $crearUsuario('estudiante1@academica.test', 'Ana Estudiante', 'estudiante', $sistemas);
         $usuarioEstudiante2 = $crearUsuario('estudiante2@academica.test', 'Luis Estudiante', 'estudiante', $software);

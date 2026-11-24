@@ -19,8 +19,8 @@ class EstudiantePolicy
             return true;
         }
 
-        // El profesor consulta registros de su carrera.
-        if ($user->hasRole('profesor')) {
+        // El profesor y el coordinador consultan registros de su carrera.
+        if ($user->hasAnyRole(['profesor', 'coordinador'])) {
             return $user->carrera_id !== null
                 && $user->carrera_id === $estudiante->carrera_id;
         }
@@ -51,8 +51,9 @@ class EstudiantePolicy
             return $user->can('estudiantes.editar');
         }
 
-        // ABAC: el profesor necesita el permiso RBAC y pertenecer a la misma carrera.
-        if ($user->hasRole('profesor')) {
+        // ABAC: profesor y coordinador (Actividad 3) necesitan el permiso RBAC
+        // y pertenecer a la misma carrera.
+        if ($user->hasAnyRole(['profesor', 'coordinador'])) {
             return $user->can('estudiantes.editar')
                 && $user->carrera_id !== null
                 && $user->carrera_id === $estudiante->carrera_id;
