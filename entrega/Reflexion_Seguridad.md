@@ -6,7 +6,9 @@ Cada integrante completa **solo su sección**, reemplazando el texto entre sus m
 ---
 
 <!-- INICIO JOSEPH (preguntas 1 y 2) -->
-_Pendiente: Joseph_
+**1. Autenticación vs. autorización.** La autenticación comprueba *quién* es el usuario (login, token de Sanctum). La autorización decide *qué puede hacer* ese usuario ya identificado (Gates, Policies, roles, permisos). Sanctum autentica; no autoriza.
+
+**2. ¿Cuándo usar Gates?** Para reglas generales que no dependen de un registro concreto, como `access-admin-dashboard` o `access-professor-dashboard`: acceso a módulos, paneles, reportes o funciones globales.
 <!-- FIN JOSEPH -->
 
 ---
